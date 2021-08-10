@@ -145,7 +145,7 @@ func runCreate(cmd *cobra.Command, _ []string) error {
 	} else if provider == "hetzner" {
 		region = "hel1"
 	} else if provider == "vultr" {
-		region = "LHR" // London
+		region = "lhr" // London
 	} else if provider == "linode" {
 		region = "eu-west"
 	} else if provider == "ovh" {
@@ -562,7 +562,7 @@ func createHost(provider, name, region, zone, projectID, userData, inletsPort st
 		return &provision.BasicHost{
 			Name:       name,
 			OS:         ubuntu20_04_x64,
-			Plan:       "201",
+			Plan:       "vc2-1c-1gb",
 			Region:     region,
 			UserData:   userData,
 			Additional: map[string]string{},
